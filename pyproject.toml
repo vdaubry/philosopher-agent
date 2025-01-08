@@ -1,0 +1,20 @@
+[project]
+name = "automating_content_creation_for_enhanced_efficiency"
+version = "0.1.0"
+description = "automating_content_creation_for_enhanced_efficiency using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "crewai[tools]>=0.86.0,<1.0.0"
+]
+
+[project.scripts]
+automating_content_creation_for_enhanced_efficiency = "automating_content_creation_for_enhanced_efficiency.main:run"
+run_crew = "automating_content_creation_for_enhanced_efficiency.main:run"
+train = "automating_content_creation_for_enhanced_efficiency.main:train"
+replay = "automating_content_creation_for_enhanced_efficiency.main:replay"
+test = "automating_content_creation_for_enhanced_efficiency.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
