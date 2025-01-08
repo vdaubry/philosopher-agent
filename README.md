@@ -10,9 +10,14 @@ First, if you haven't already, install uv:
 
 ```bash
 pip install uv
+uv venv
 ```
 
 Next, navigate to your project directory and install the dependencies:
+
+```bash
+uv pip install --requirements pyproject.toml
+```
 
 (Optional) Lock the dependencies and install them by using the CLI command:
 ```bash

@@ -1,7 +1,6 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import ScrapeWebsiteTool
-from crewai_tools import Systeme.io
 
 @CrewBase
 class AutomatingContentCreationForEnhancedEfficiencyCrew():
@@ -32,7 +31,7 @@ class AutomatingContentCreationForEnhancedEfficiencyCrew():
     def website_publishing_specialist(self) -> Agent:
         return Agent(
             config=self.agents_config['website_publishing_specialist'],
-            tools=[Systeme.io()],
+            tools=[],
         )
 
 
@@ -61,7 +60,7 @@ class AutomatingContentCreationForEnhancedEfficiencyCrew():
     def publish_blog_post_task(self) -> Task:
         return Task(
             config=self.tasks_config['publish_blog_post_task'],
-            tools=[Systeme.io()],
+            tools=[],
         )
 
 
