@@ -26,6 +26,13 @@ uv run celery -A celery_app worker --loglevel=info
 ```
 
 
+Deploy On Heroku:
+```bash
+uv pip freeze | grep -v "^-e" | grep -v "git.heroku.com" > requirements.txt
+git ci -am "fix requirements"
+git push heroku master
+```
+
 (Optional) Lock the dependencies and install them by using the CLI command:
 ```bash
 crewai install
