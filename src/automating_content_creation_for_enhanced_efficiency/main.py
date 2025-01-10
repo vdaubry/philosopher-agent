@@ -16,21 +16,6 @@ def run():
     }
     crew_output = AutomatingContentCreationForEnhancedEfficiencyCrew().crew().kickoff(inputs=inputs)
     print(crew_output)
-    # blog_post_content = crew_output.pydantic.blog_post_content
-    #
-    # mail_sender = MailSender()
-    # from_email = "antoine@corpogames.fr"  # Replace with your sender email
-    # to_email = "vdaubry@gmail.com"
-    # subject = "[Agentic] Blog Post Proposal"
-    # content = blog_post_content
-    #
-    # try:
-    #     # Send the email
-    #     response = mail_sender.send_email(from_email, to_email, subject, content)
-    #     print(f"Email sent successfully! Status code: {response['status_code']}")
-    # except RuntimeError as e:
-    #     print(f"Error: {e}")
-
 
 
 def train():
