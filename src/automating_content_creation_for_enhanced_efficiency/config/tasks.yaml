@@ -1,36 +1,38 @@
 ---
 monitor_news_task:
-  description: Scrape specified websites daily for the latest news and opinions related
+  description: >
+    Scrape specified websites daily for the latest news and opinions related
     to HR, employee engagement, employee experience, professional well-being, and
     the future of work.
-  expected_output: A compilation of daily news and opinions related to the specified
-    topics, ready for analysis.
+  expected_output: >
+    A beautifully formatted HTML, containing compilation of daily news and opinions related to the specified
+    topics, ready for analysis. Final HTML is stored as "blog_post_content". Make sure to maximize readability : use titles, paragraphs, bullet points, and everything you can think of to make it easy to read.
   async_execution: false
   agent: news_monitoring_specialist
-suggest_topic_task:
-  description: Analyze the compiled news and opinions to suggest one specific topic
-    or news item each day for blog content.
-  expected_output: A suggested topic or news item for the daily blog post based on
-    the latest trends and discussions in HR and employee engagement.
-  async_execution: false
-  agent: topic_suggestion_expert
-  context:
-  - monitor_news_task
-generate_blog_post_task:
-  description: Create a full blog post based on the suggested topic, incorporating
-    the company's branding guidelines and relevant keywords.
-  expected_output: A well-written blog post ready for publication, tailored to the
-    suggested topic and aligned with Corpogames' branding.
-  async_execution: false
-  agent: blog_content_creator
-  context:
-  - suggest_topic_task
+#suggest_topic_task:
+#  description: Analyze the compiled news and opinions to suggest one specific topic
+#    or news item each day for blog content.
+#  expected_output: A suggested topic or news item for the daily blog post based on
+#    the latest trends and discussions in HR and employee engagement.
+#  async_execution: false
+#  agent: topic_suggestion_expert
+#  context:
+#  - monitor_news_task
+#generate_blog_post_task:
+#  description: Create a full blog post based on the suggested topic, incorporating
+#    the company's branding guidelines and relevant keywords.
+#  expected_output: A well-written blog post ready for publication, tailored to the
+#    suggested topic and aligned with Corpogames' branding.
+#  async_execution: false
+#  agent: blog_content_creator
+#  context:
+#  - suggest_topic_task
 publish_blog_post_task:
-  description: Automatically publish the generated blog post on the Corpogames website
-    using Systeme.io.
-  expected_output: The blog post is successfully published on the website, visible
-    to the audience.
+  description: >
+    Automatically publish the generated blog post.
+  expected_output: > 
+    The blog post is successfully published using BlogTool
   async_execution: false
   agent: website_publishing_specialist
-  context:
-  - generate_blog_post_task
+#  context:
+#  - generate_blog_post_task
