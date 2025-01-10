@@ -13,7 +13,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
 CELERY_BROKER_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
 app = Celery('celery_app', broker=CELERY_BROKER_URL)
 app.conf.update(
-    result_backend='redis://localhost:6379/0',
+    result_backend=CELERY_BROKER_URL,
     task_default_queue='daily_philosopher',
     beat_schedule={
         'run-daily_blog_post': {
