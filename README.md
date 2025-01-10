@@ -19,6 +19,13 @@ Next, navigate to your project directory and install the dependencies:
 uv pip install --requirements pyproject.toml
 ```
 
+Run the worker locally
+
+```bash
+uv run celery -A celery_app worker --loglevel=info
+```
+
+
 (Optional) Lock the dependencies and install them by using the CLI command:
 ```bash
 crewai install

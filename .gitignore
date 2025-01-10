@@ -4,3 +4,4 @@ __pycache__/
 *.log
 report.md
 .DS_Store
+celerybeat-schedule

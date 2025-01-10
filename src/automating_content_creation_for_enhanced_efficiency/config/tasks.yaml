@@ -31,7 +31,7 @@ publish_blog_post_task:
   description: >
     Automatically publish the generated blog post.
   expected_output: > 
-    The blog post is successfully published using BlogTool
+    The blog post is successfully published using BlogTool. you MUST call BlogTool with the params "title" and "html_content".
   async_execution: false
   agent: website_publishing_specialist
 #  context:
