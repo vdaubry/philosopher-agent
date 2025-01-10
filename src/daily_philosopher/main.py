@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import sys
-from automating_content_creation_for_enhanced_efficiency.crew import AutomatingContentCreationForEnhancedEfficiencyCrew
-from automating_content_creation_for_enhanced_efficiency.mail_sender import MailSender
+from daily_philosopher.crew import DailyPhilosopherCrew
 
 # This main file is intended to be a way for your to run your
 # crew locally, so refrain from adding unnecessary logic into this file.
@@ -14,7 +13,7 @@ def run():
     """
     inputs = {
     }
-    crew_output = AutomatingContentCreationForEnhancedEfficiencyCrew().crew().kickoff(inputs=inputs)
+    crew_output = DailyPhilosopherCrew().crew().kickoff(inputs=inputs)
     print(crew_output)
 
 
@@ -23,10 +22,10 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        
+
     }
     try:
-        AutomatingContentCreationForEnhancedEfficiencyCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        DailyPhilosopherCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
@@ -36,7 +35,7 @@ def replay():
     Replay the crew execution from a specific task.
     """
     try:
-        AutomatingContentCreationForEnhancedEfficiencyCrew().crew().replay(task_id=sys.argv[1])
+        DailyPhilosopherCrew().crew().replay(task_id=sys.argv[1])
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
@@ -46,10 +45,10 @@ def test():
     Test the crew execution and returns the results.
     """
     inputs = {
-        
+
     }
     try:
-        AutomatingContentCreationForEnhancedEfficiencyCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
+        DailyPhilosopherCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")

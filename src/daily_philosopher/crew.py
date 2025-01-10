@@ -1,15 +1,15 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from pydantic import BaseModel
-from automating_content_creation_for_enhanced_efficiency.tools.blog_tool import BlogTool
+from daily_philosopher.tools.blog_tool import BlogTool
 
 class BlogPostOutput(BaseModel):
     """Pydantic model for the output of the report_compilation_task."""
     blog_post_content: str
 
 @CrewBase
-class AutomatingContentCreationForEnhancedEfficiencyCrew():
-    """AutomatingContentCreationForEnhancedEfficiency crew"""
+class DailyPhilosopherCrew():
+    """crew"""
 
     @agent
     def dark_humor_philosopher(self) -> Agent:
@@ -43,7 +43,7 @@ class AutomatingContentCreationForEnhancedEfficiencyCrew():
 
     @crew
     def crew(self) -> Crew:
-        """Creates the AutomatingContentCreationForEnhancedEfficiency crew"""
+        """Creates the crew"""
         return Crew(
             agents=self.agents, # Automatically created by the @agent decorator
             tasks=self.tasks, # Automatically created by the @task decorator

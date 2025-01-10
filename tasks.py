@@ -1,12 +1,12 @@
 from celery_app import app
-from automating_content_creation_for_enhanced_efficiency.crew import AutomatingContentCreationForEnhancedEfficiencyCrew
+from daily_philosopher.crew import DailyPhilosopherCrew
 import agentops
 
 @app.task
-def daily_blog_post():
+def new_blog_post():
     """Run the BlogPostCrew."""
     agentops.init()
 
     inputs = {
     }
-    crew_output = AutomatingContentCreationForEnhancedEfficiencyCrew().crew().kickoff(inputs=inputs)
+    crew_output = DailyPhilosopherCrew().crew().kickoff(inputs=inputs)

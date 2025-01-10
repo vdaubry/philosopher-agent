@@ -1,7 +1,7 @@
 from crewai.tools import BaseTool
 from typing import Type
 from pydantic import BaseModel, Field
-from automating_content_creation_for_enhanced_efficiency.blog_poster import BlogPoster
+from daily_philosopher.blog_poster import BlogPoster
 
 class BlogPostToolInput(BaseModel):
     title: str = Field(..., description="Title of the blog post.")
