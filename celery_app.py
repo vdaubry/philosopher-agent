@@ -13,24 +13,25 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
 # Use the REDIS_URL environment variable, default to localhost for local development
 CELERY_BROKER_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
 
-# Define SSL settings for secure Redis connections
-BROKER_TRANSPORT_OPTIONS = {
-    "ssl_cert_reqs": "CERT_NONE"  # Change to "CERT_REQUIRED" for stricter validation
+# Define SSL options for Redis
+REDIS_SSL_OPTIONS = {
+    "ssl_cert_reqs": "CERT_NONE"  # Use "CERT_REQUIRED" for stricter SSL validation
 }
 
+# Initialize Celery app
 app = Celery('celery_app', broker=CELERY_BROKER_URL)
 app.conf.update(
-    result_backend=CELERY_BROKER_URL,
+    result_backend=CELERY_BROKER_URL,  # Use the same URL for result backend
+    broker_transport_options=REDIS_SSL_OPTIONS,  # Apply SSL options to the broker
+    result_backend_transport_options=REDIS_SSL_OPTIONS,  # Apply SSL options to the result backend
     task_default_queue='daily_philosopher',
     beat_schedule={
         'run-daily_blog_post': {
             'task': 'tasks.new_blog_post',
             #'schedule': crontab(hour=1, minute=0),
-            'schedule': crontab(minute='*/1'),
+            'schedule': crontab(minute='*/1'),  # For testing
             'args': ()
         }
     },
-    broker_transport_options=BROKER_TRANSPORT_OPTIONS,
-    result_backend_transport_options=BROKER_TRANSPORT_OPTIONS,  # Ensure backend uses SSL options
     include=['tasks']
 )
