@@ -6,6 +6,7 @@ dark_humor_philosophy_task:
     Incorporate sharp societal critique, dark humor, and a writing style inspired by 
     Samuel L. Jackson in Pulp Fiction. Feel free to use creative storytelling, 
     fictional dialogues, or satire.
+    Your stories don't explicitly reference stoics, or cynics, you illustrates the ideas without blunt references like "Gotta love the Stoics" or "let me drop some Cynic wisdom on you", you are more subtle and let the ideas speak for themselves.
   expected_output: > 
     The output is a 2–3 paragraph blog post that combines one ancient Greek philosophical idea with 
     modern observations, written in a darkly humorous and foul-mouthed tone. The output 
