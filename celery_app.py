@@ -33,7 +33,7 @@ app.conf.update(
     beat_schedule={
         'run-daily_blog_post': {
             'task': 'tasks.new_blog_post',
-            'schedule': crontab(minute='*/1'),  # Runs every minute for testing
+            'schedule': crontab(hour=1, minute=0),  # Run daily at 1:00 AM
             'args': ()
         }
     },
